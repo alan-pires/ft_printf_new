@@ -6,13 +6,13 @@
 /*   By: apires-d <apires-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 15:51:54 by apires-d          #+#    #+#             */
-/*   Updated: 2021/07/20 14:50:47 by apires-d         ###   ########.fr       */
+/*   Updated: 2021/07/20 16:13:59 by apires-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-void	ft_put_unsi_count(unsigned int n, t_option *opt)
+static void	ft_put_unsi_count(unsigned int n, t_option *opt)
 {
 	unsigned int	num;
 

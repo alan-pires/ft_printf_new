@@ -6,7 +6,7 @@
 /*   By: apires-d <apires-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 19:58:33 by apires-d          #+#    #+#             */
-/*   Updated: 2021/07/20 15:48:09 by apires-d         ###   ########.fr       */
+/*   Updated: 2021/07/20 16:12:01 by apires-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ void	ft_check_conversion(const char *format, va_list args, t_option *opt);
 void	ft_putnbr_count(int n, t_option *opt);
 void	ft_putstr_count(const char *s, t_option *opt);
 void	ft_putchar_count(char c, t_option *opt);
-void	ft_put_unsi_count(unsigned int n, t_option *opt);
 void	init_options(t_option *opt);
 
 #	endif
