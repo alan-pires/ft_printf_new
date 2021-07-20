@@ -6,7 +6,7 @@
 /*   By: apires-d <apires-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 09:27:34 by apires-d          #+#    #+#             */
-/*   Updated: 2021/07/20 00:46:38 by apires-d         ###   ########.fr       */
+/*   Updated: 2021/07/20 13:19:43 by apires-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,24 +36,17 @@ static void	print_wp_percent(t_option *opt, char pave)
 	}
 }
 
-void	ft_printf_percent(const char *str, t_option *opt)
+void	ft_printf_percent(t_option *opt)
 {
-	static int	i;
-	char		pave;
+	char	pave;
 
-	i = 0;
 	if (opt->zero == 1 && opt->dash == 0)
 		pave = '0';
 	else
 		pave = ' ';
-	while (str[i] && str[i] != '%')
-		i++;
-	if (str[i] == '%')
-	{
-		if (opt->dash == 0)
-			print_wp_percent(opt, pave);
-		else
-			print_wp_dash_perc(opt, pave);
-	}
+	if (opt->dash == 0)
+		print_wp_percent(opt, pave);
+	else
+		print_wp_dash_perc(opt, pave);
 	ft_reset_opt(opt);
 }

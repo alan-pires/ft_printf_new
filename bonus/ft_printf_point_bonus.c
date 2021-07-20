@@ -6,7 +6,7 @@
 /*   By: apires-d <apires-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 14:31:30 by apires-d          #+#    #+#             */
-/*   Updated: 2021/07/20 00:39:37 by apires-d         ###   ########.fr       */
+/*   Updated: 2021/07/20 13:19:51 by apires-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,22 +96,14 @@ static void	print_point(va_list args, t_option *opt)
 	free(hex_arg);
 }
 
-void	ft_printf_point(const char *str, va_list args, t_option *opt)
+void	ft_printf_point(va_list args, t_option *opt)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] && str[i] != '%')
-		i++;
-	if (str[i] == '%')
-	{
-		if (opt->wid == 0 && opt->dash == 0 && opt->zero == 0
-			&& opt->prec == -1)
-			print_point(args, opt);
-		else if (opt->wid >= 0 && opt->dash == 0)
-			print_wi_point(args, opt);
-		else if (opt->wid >= 0 && opt->dash == 1)
-			print_wi_dash_point(args, opt);
-	}
+	if (opt->wid == 0 && opt->dash == 0 && opt->zero == 0
+		&& opt->prec == -1)
+		print_point(args, opt);
+	else if (opt->wid >= 0 && opt->dash == 0)
+		print_wi_point(args, opt);
+	else if (opt->wid >= 0 && opt->dash == 1)
+		print_wi_dash_point(args, opt);
 	ft_reset_opt(opt);
 }

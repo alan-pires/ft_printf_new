@@ -6,7 +6,7 @@
 /*   By: apires-d <apires-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 20:57:20 by apires-d          #+#    #+#             */
-/*   Updated: 2021/07/20 00:39:33 by apires-d         ###   ########.fr       */
+/*   Updated: 2021/07/20 13:20:01 by apires-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,26 +79,18 @@ void	print_str(va_list args, t_option *opt)
 		ft_putstr_count(str_arg, opt);
 }
 
-void	ft_printf_str(const char *str, va_list args, t_option *opt)
+void	ft_printf_str(va_list args, t_option *opt)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] && str[i] != '%')
-		i++;
-	if (str[i] == '%')
-	{
-		if (opt->wid == 0 && opt->zero == 0
-			&& opt->prec == -1)
-			print_str(args, opt);
-		if (opt->wid > 0 && opt->dash == 0 && opt->prec == -1 && opt->zero == 0)
-			print_wi_str(args, opt);
-		if (opt->wid > 0 && opt->dash == 1 && opt->prec == -1 && opt->zero == 0)
-			print_wi_dash_str(args, opt);
-		if (opt->prec >= 0 && opt->dash == 0 && opt->zero == 0)
-			print_pw_str(args, opt);
-		if (opt->prec >= 0 && opt->dash == 1 && opt->zero == 0)
-			print_pw_dash_str(args, opt);
-	}
+	if (opt->wid == 0 && opt->zero == 0
+		&& opt->prec == -1)
+		print_str(args, opt);
+	if (opt->wid > 0 && opt->dash == 0 && opt->prec == -1 && opt->zero == 0)
+		print_wi_str(args, opt);
+	if (opt->wid > 0 && opt->dash == 1 && opt->prec == -1 && opt->zero == 0)
+		print_wi_dash_str(args, opt);
+	if (opt->prec >= 0 && opt->dash == 0 && opt->zero == 0)
+		print_pw_str(args, opt);
+	if (opt->prec >= 0 && opt->dash == 1 && opt->zero == 0)
+		print_pw_dash_str(args, opt);
 	ft_reset_opt(opt);
 }

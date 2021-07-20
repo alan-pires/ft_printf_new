@@ -6,7 +6,7 @@
 /*   By: apires-d <apires-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 15:51:54 by apires-d          #+#    #+#             */
-/*   Updated: 2021/07/20 13:11:41 by apires-d         ###   ########.fr       */
+/*   Updated: 2021/07/20 13:20:59 by apires-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,29 +72,21 @@ static void	print_wi_ze_uint(va_list args, t_option *opt, char pave)
 	ft_put_unsi_count(uint_arg, opt);
 }
 
-void	ft_printf_unsi_int(const char *str, va_list args, t_option *opt)
+void	ft_printf_unsi_int(va_list args, t_option *opt)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] && str[i] != '%')
-		i++;
-	if (str[i] == '%')
-	{
-		if (opt->wid >= 0 && opt->dash == 0 && opt->prec == -1
-			&& opt->zero == 0)
-			print_wi_ze_uint(args, opt, ' ');
-		if (opt->wid >= 0 && opt->dash == 1 && opt->prec == -1)
-			print_wi_dash_uint(args, opt);
-		if (opt->zero == 1 && opt->dash == 0 && opt->wid >= 0
-			&& opt->prec == -1)
-			print_wi_ze_uint(args, opt, '0');
-		if (opt->prec >= 0 && opt->dash == 0 && opt->wid == 0)
-			print_prec_uint(args, opt);
-		if (opt->prec >= 0 && opt->dash == 0 && opt->wid > 0)
-			print_pw_uint(args, opt);
-		if (opt->prec >= 0 && opt->dash == 1)
-			print_pw_uint_dash(args, opt);
-	}
+	if (opt->wid >= 0 && opt->dash == 0 && opt->prec == -1
+		&& opt->zero == 0)
+		print_wi_ze_uint(args, opt, ' ');
+	if (opt->wid >= 0 && opt->dash == 1 && opt->prec == -1)
+		print_wi_dash_uint(args, opt);
+	if (opt->zero == 1 && opt->dash == 0 && opt->wid >= 0
+		&& opt->prec == -1)
+		print_wi_ze_uint(args, opt, '0');
+	if (opt->prec >= 0 && opt->dash == 0 && opt->wid == 0)
+		print_prec_uint(args, opt);
+	if (opt->prec >= 0 && opt->dash == 0 && opt->wid > 0)
+		print_pw_uint(args, opt);
+	if (opt->prec >= 0 && opt->dash == 1)
+		print_pw_uint_dash(args, opt);
 	ft_reset_opt(opt);
 }
