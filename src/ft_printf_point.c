@@ -6,7 +6,7 @@
 /*   By: apires-d <apires-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 14:31:30 by apires-d          #+#    #+#             */
-/*   Updated: 2021/07/20 01:03:20 by apires-d         ###   ########.fr       */
+/*   Updated: 2021/07/20 14:50:28 by apires-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,4 @@ void	ft_printf_point(va_list args, t_option *opt)
 	else
 		print_neg_point(hex_arg, opt);
 	free(hex_arg);
-	ft_reset_opt(opt);
 }

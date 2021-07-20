@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_send_format.c                                   :+:      :+:    :+:   */
+/*   ft_check_conversion.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apires-d <apires-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 17:00:11 by apires-d          #+#    #+#             */
-/*   Updated: 2021/07/20 01:03:00 by apires-d         ###   ########.fr       */
+/*   Updated: 2021/07/20 15:19:05 by apires-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-static void	ft_check_conversion(const char *format, va_list args, t_option *opt)
+void	ft_check_conversion(const char *format, va_list args, t_option *opt)
 {
 	if (format[opt->posit] == 'c')
 		ft_printf_char(args, opt);
@@ -37,16 +37,4 @@ static void	ft_check_conversion(const char *format, va_list args, t_option *opt)
 	else if (format[opt->posit] == '%')
 		ft_printf_percent(opt);
 	opt->posit++;
-}
-
-void	ft_send_format(const char *format, va_list args, t_option *opt)
-{
-	int		end_sub;
-	char	*sub_format;
-
-	end_sub = opt->posit + 1;
-	sub_format = ft_substr(format, opt->aux_pos, end_sub);
-	opt->aux_pos = opt->posit;
-	ft_check_conversion(sub_format, args, opt);
-	free(sub_format);
 }

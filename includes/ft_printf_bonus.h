@@ -6,7 +6,7 @@
 /*   By: apires-d <apires-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 19:58:33 by apires-d          #+#    #+#             */
-/*   Updated: 2021/07/20 13:22:41 by apires-d         ###   ########.fr       */
+/*   Updated: 2021/07/20 15:17:50 by apires-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ typedef struct s_option
 	int		zero;
 	int		dash;
 	int		prec;
-	int		aux_pos;
 	int		count;
 	char	hexa;
 }			t_option;

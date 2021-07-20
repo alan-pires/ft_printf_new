@@ -6,7 +6,7 @@
 /*   By: apires-d <apires-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 17:00:11 by apires-d          #+#    #+#             */
-/*   Updated: 2021/07/20 13:23:03 by apires-d         ###   ########.fr       */
+/*   Updated: 2021/07/20 15:34:49 by apires-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,7 @@ void	ft_send_format(const char *format, va_list args, t_option *opt)
 	char	*sub_format;
 
 	end_sub = opt->posit + 1;
-	sub_format = ft_substr(format, opt->aux_pos, end_sub);
-	opt->aux_pos = opt->posit;
+	sub_format = ft_substr(format, 0, end_sub);
 	ft_check_conversion(sub_format, args, opt);
 	free(sub_format);
 }

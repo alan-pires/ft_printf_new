@@ -6,7 +6,7 @@
 /*   By: apires-d <apires-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 15:51:54 by apires-d          #+#    #+#             */
-/*   Updated: 2021/07/20 01:03:09 by apires-d         ###   ########.fr       */
+/*   Updated: 2021/07/20 14:50:47 by apires-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,4 @@ void	ft_printf_unsi_int(va_list args, t_option *opt)
 
 	uint_arg = va_arg(args, unsigned int);
 	ft_put_unsi_count(uint_arg, opt);
-	ft_reset_opt(opt);
 }

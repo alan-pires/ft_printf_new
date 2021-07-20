@@ -6,7 +6,7 @@
 /*   By: apires-d <apires-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 19:58:52 by apires-d          #+#    #+#             */
-/*   Updated: 2021/07/20 13:09:51 by apires-d         ###   ########.fr       */
+/*   Updated: 2021/07/20 15:02:44 by apires-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_printf(const char *format, ...)
 		if (format[opt.posit] == '%')
 		{
 			opt.posit++;
-			ft_send_format(format, args, &opt);
+			ft_check_conversion(format, args, &opt);
 		}
 		else
 			ft_putchar_count(format[opt.posit++], &opt);

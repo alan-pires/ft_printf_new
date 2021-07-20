@@ -9,7 +9,7 @@ LIBFT_FLAGS = -L ./libft -lft
 
 INCLUDES = -I$(INCLUDESDIR) -I ./libft/includes
 SRCS = ft_printf.c ft_printf_unsi_int.c ft_printf_unsi_hex.c \
-		ft_printf_point.c ft_printf_char.c  ft_send_format.c \
+		ft_printf_point.c ft_printf_char.c  ft_check_conversion.c \
 		ft_printf_str.c ft_printf_int.c ft_printf_utils.c \
 		ft_printf_options.c ft_printf_percent.c
 OBJS := $(addprefix $(OBJDIR)/,$(SRCS:.c=.o))

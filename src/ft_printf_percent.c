@@ -6,7 +6,7 @@
 /*   By: apires-d <apires-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 09:27:34 by apires-d          #+#    #+#             */
-/*   Updated: 2021/07/20 01:03:15 by apires-d         ###   ########.fr       */
+/*   Updated: 2021/07/20 14:50:19 by apires-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,4 @@
 void	ft_printf_percent(t_option *opt)
 {
 	ft_putchar_count('%', opt);
-	ft_reset_opt(opt);
 }
