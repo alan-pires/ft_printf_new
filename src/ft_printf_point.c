@@ -6,7 +6,7 @@
 /*   By: apires-d <apires-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 14:31:30 by apires-d          #+#    #+#             */
-/*   Updated: 2021/07/20 14:50:28 by apires-d         ###   ########.fr       */
+/*   Updated: 2021/07/20 16:27:18 by apires-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ static void	print_neg_point(char *arg, t_option *opt)
 
 static char	*ft_lltohex(unsigned long nbr)
 {
-	char				*hex_alg;
-	char				*str;
-	unsigned long		tmp;
-	unsigned long		size;
+	char			*hex_alg;
+	char			*str;
+	unsigned long	tmp;
+	unsigned long	size;
 
 	hex_alg = ft_strdup("0123456789abcdef");
 	size = 0;
