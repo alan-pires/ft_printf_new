@@ -6,7 +6,7 @@
 /*   By: apires-d <apires-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/27 09:16:16 by apires-d          #+#    #+#             */
-/*   Updated: 2021/07/20 00:40:35 by apires-d         ###   ########.fr       */
+/*   Updated: 2021/07/20 13:11:16 by apires-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	print_pw_uhex(va_list args, t_option *opt)
 {
-	int	len;
+	int				len;
 	unsigned int	uhex_arg;
 	char			*hex_arg;
 
@@ -41,7 +41,7 @@ static void	print_pw_uhex(va_list args, t_option *opt)
 
 static void	print_prec_uhex(va_list args, t_option *opt)
 {
-	int	len;
+	int				len;
 	unsigned int	uhex_arg;
 	char			*hex_arg;
 
@@ -63,7 +63,7 @@ static void	print_prec_uhex(va_list args, t_option *opt)
 
 static void	print_wi_dash_uhex(va_list args, t_option *opt)
 {
-	int	len;
+	int				len;
 	unsigned int	uhex_arg;
 	char			*hex_arg;
 
@@ -84,7 +84,7 @@ static void	print_wi_dash_uhex(va_list args, t_option *opt)
 
 static void	print_wi_ze_uhex(va_list args, t_option *opt, char pave)
 {
-	int	len;
+	int				len;
 	unsigned int	uhex_arg;
 	char			*hex_arg;
 

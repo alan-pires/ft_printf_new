@@ -6,7 +6,7 @@
 /*   By: apires-d <apires-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 15:51:54 by apires-d          #+#    #+#             */
-/*   Updated: 2021/07/20 00:39:30 by apires-d         ###   ########.fr       */
+/*   Updated: 2021/07/20 13:11:41 by apires-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	print_pw_uint(va_list args, t_option *opt)
 {
-	int	len;
+	int				len;
 	unsigned int	uint_arg;
 
 	uint_arg = va_arg(args, unsigned int);
@@ -32,7 +32,7 @@ static void	print_pw_uint(va_list args, t_option *opt)
 
 static void	print_prec_uint(va_list args, t_option *opt)
 {
-	int	len;
+	int				len;
 	unsigned int	uint_arg;
 
 	uint_arg = va_arg(args, unsigned int);
@@ -49,7 +49,7 @@ static void	print_prec_uint(va_list args, t_option *opt)
 
 static void	print_wi_dash_uint(va_list args, t_option *opt)
 {
-	int	len;
+	int				len;
 	unsigned int	uint_arg;
 
 	uint_arg = va_arg(args, unsigned int);
@@ -62,7 +62,7 @@ static void	print_wi_dash_uint(va_list args, t_option *opt)
 
 static void	print_wi_ze_uint(va_list args, t_option *opt, char pave)
 {
-	int	len;
+	int				len;
 	unsigned int	uint_arg;
 
 	uint_arg = va_arg(args, unsigned int);

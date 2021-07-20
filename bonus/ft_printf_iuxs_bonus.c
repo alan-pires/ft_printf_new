@@ -6,7 +6,7 @@
 /*   By: apires-d <apires-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 11:53:28 by apires-d          #+#    #+#             */
-/*   Updated: 2021/07/20 00:45:31 by apires-d         ###   ########.fr       */
+/*   Updated: 2021/07/20 13:10:49 by apires-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	print_pw_int_dash(va_list args, t_option *opt)
 
 void	print_pw_uhex_dash(va_list args, t_option *opt)
 {
-	int	len;
+	int				len;
 	unsigned int	uhex_arg;
 	char			*hex_arg;
 
@@ -79,7 +79,7 @@ void	print_pw_uhex_dash(va_list args, t_option *opt)
 
 void	print_pw_uint_dash(va_list args, t_option *opt)
 {
-	int	len;
+	int				len;
 	unsigned int	uint_arg;
 
 	uint_arg = va_arg(args, unsigned int);

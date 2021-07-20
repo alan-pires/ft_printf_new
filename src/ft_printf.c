@@ -6,7 +6,7 @@
 /*   By: apires-d <apires-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 19:58:52 by apires-d          #+#    #+#             */
-/*   Updated: 2021/07/20 01:03:03 by apires-d         ###   ########.fr       */
+/*   Updated: 2021/07/20 13:09:51 by apires-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,7 @@ int	ft_printf(const char *format, ...)
 	t_option	opt;
 
 	init_options(&opt);
-	// if (ft_check_errors(format, &opt) == 1)
-	// 	return (-1);
 	va_start(args, format);
-	// init_options(&opt);
 	while (format[opt.posit])
 	{
 		if (format[opt.posit] == '%')

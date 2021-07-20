@@ -6,7 +6,7 @@
 /*   By: apires-d <apires-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 20:57:20 by apires-d          #+#    #+#             */
-/*   Updated: 2021/07/20 01:03:14 by apires-d         ###   ########.fr       */
+/*   Updated: 2021/07/20 13:09:28 by apires-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ void	ft_printf_str(va_list args, t_option *opt)
 	if (!str_arg)
 		ft_putstr_count("(null)", opt);
 	else
-		ft_putstr_count(str_arg, opt);	
+		ft_putstr_count(str_arg, opt);
 	ft_reset_opt(opt);
 }
