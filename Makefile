@@ -1,16 +1,13 @@
 NAME = libftprintf.a
-CC = clang
-CFLAGS = -Wall -Wextra -Werror
-
+CC = gcc
+FLAGS = -Wall -Wextra -Werror -fPIC
 INCLUDESDIR = ./includes
 SRCDIR = ./src
-OBJDIR = ./build
+OBJDIR = ./objects
+LIBFT = ./libft/libft.a
+LIBFT_FLAGS = -L ./libft -lft
 
-LIBFT_PATH = ./libft
-LIBFT = $(LIBFT_PATH)/libft.a
-LIBFT_FLAGS = -L$(LIBFT_PATH) -lft
-
-INCLUDES = -I$(INCLUDESDIR) -I$(LIBFT_PATH)/includes
+INCLUDES = -I$(INCLUDESDIR) -I ./libft/includes
 SRCS = ft_printf.c ft_printf_unsi_int.c ft_printf_unsi_hex.c \
 		ft_printf_point.c ft_printf_char.c  ft_send_format.c \
 		ft_printf_str.c ft_printf_int.c ft_printf_utils.c \
@@ -27,35 +24,33 @@ BONUS_SRCS = ft_printf_bonus.c ft_check_flags_bonus.c ft_printf_unsi_int_bonus.c
 BONUS_OBJS := $(addprefix $(OBJDIR)/,$(BONUS_SRCS:.c=.o))
 BONUS_SRCS := $(addprefix $(BONUS_SRCDIR)/,$(BONUS_SRCS))
 
-RM = rm -f
-
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(OBJS)
-	@cp $(LIBFT) $@
-	@ar rcs $@ $(OBJS)
+	cp $(LIBFT) $(NAME)
+	ar rcs $(NAME) $(OBJS)
 
 $(LIBFT):
-	@make -C $(LIBFT_PATH)
+	make -C ./libft
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
-	@mkdir -p $(OBJDIR)
-	@$(CC) $(CFLAGS) $(INCLUDES) $< -c -o $@
+	mkdir -p $(OBJDIR)
+	$(CC) $(FLAGS) $(INCLUDES) $< -c -o $@
 
 $(OBJDIR)/%.o: $(BONUS_SRCDIR)/%.c
-	@mkdir -p $(OBJDIR)
-	@$(CC) $(CFLAGS) $(INCLUDES) $< -c -o $@
+	mkdir -p $(OBJDIR)
+	$(CC) $(FLAGS) $(INCLUDES) $< -c -o $@
 
 clean:
-	@make clean -C $(LIBFT_PATH)
-	@$(RM) -r $(OBJDIR)
+	make clean -C ./libft
+	rm -rf $(OBJDIR)
 
 fclean: clean
-	@make fclean -C $(LIBFT_PATH)
-	@$(RM) $(NAME)
+	make fclean -C ./libft
+	rm -rf $(NAME)
 
 re: fclean all
 
 bonus: $(LIBFT) $(BONUS_OBJS)
-	@cp $(LIBFT) $(NAME)
-	@ar rcs $(NAME) $(BONUS_OBJS)
+	cp $(LIBFT) $(NAME)
+	ar rcs $(NAME) $(BONUS_OBJS)

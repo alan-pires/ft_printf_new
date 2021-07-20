@@ -6,7 +6,7 @@
 /*   By: apires-d <apires-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 19:58:33 by apires-d          #+#    #+#             */
-/*   Updated: 2021/07/20 00:43:54 by apires-d         ###   ########.fr       */
+/*   Updated: 2021/07/20 13:07:01 by apires-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdarg.h>
 # include <stdlib.h>
-# include <stdio.h> /* LEMBRAR DE TIRAR */
+# include <limits.h>
 # include "../libft/libft.h"
 
 typedef struct s_option

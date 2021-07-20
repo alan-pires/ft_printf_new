@@ -6,7 +6,7 @@
 /*   By: apires-d <apires-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 12:07:07 by apires-d          #+#    #+#             */
-/*   Updated: 2021/07/20 00:39:28 by apires-d         ###   ########.fr       */
+/*   Updated: 2021/07/20 11:41:03 by apires-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ char	*ft_uinttohex(unsigned int nbr, t_option *opt)
 	char			*hex_alg;
 	char			*str;
 	unsigned int	tmp;
-	int				size;
+	unsigned int	size;
 
 	if (opt->hexa == 'x')
 		hex_alg = ft_strdup("0123456789abcdef");
