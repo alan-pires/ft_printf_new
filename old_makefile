@@ -1,0 +1,71 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: apires-d <apires-d@student.42sp.org.br>    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/06/25 11:02:55 by apires-d          #+#    #+#              #
+#    Updated: 2021/07/20 00:22:13 by apires-d         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME = libftprintf.a
+CC = gcc
+FLAGS = -Wall -Wextra -Werror
+
+INCLUDES = include
+SRC_DIR = srcs
+OBJ_DIR = obj
+
+LIBFT = libft
+BONUS = Bonus
+B_SRC_DIR = ./bonus
+
+FILES = ft_printf.c ft_printf_unsi_int.c ft_printf_unsi_hex.c \
+		ft_printf_point.c ft_printf_char.c  ft_send_format.c \
+		ft_printf_str.c ft_printf_int.c ft_printf_utils.c \
+		ft_printf_options.c ft_printf_percent.c
+SRCS = $(addprefix $(SRC_DIR)/,$(FILES))
+OBJS = $(addprefix $(OBJ_DIR)/,$(FILES:.c=.o))
+
+B_FILES = ft_printf_bonus.c ft_check_flags_bonus.c ft_printf_unsi_int_bonus.c \
+		ft_printf_unsi_hex_bonus.c ft_printf_point_bonus.c ft_printf_char_bonus.c \
+		ft_send_format_bonus.c ft_printf_str_bonus.c ft_printf_int_bonus.c \
+		ft_printf_utils1_bonus.c ft_printf_utils2_bonus.c ft_check_errors_bonus.c \
+		ft_printf_options_bonus.c ft_printf_iuxs_bonus.c ft_printf_percent_bonus.c
+B_SRCS = $(addprefix $(B_SRC_DIR)/,$(B_FILES))
+B_OBJS = $(addprefix $(B_OBJ_DIR)/,$(B_FILES:.c=.o))
+
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	make -C $(LIBFT)
+	cp $(LIBFT)/libft.a ./$(NAME)
+	ar -rcs $(NAME) $(OBJS)
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	mkdir -p $(OBJ_DIR)
+	$(CC) $(FLAGS) -I $(INCLUDES) -o $@ -c $<
+
+$(B_OBJ_DIR)/%.o: $(B_SRC_DIR)/%.c $(INCLUDES)/ft_printf_bonus.h
+	mkdir -p obj_bonus
+	$(CC) -I $(INCLUDES) -o $@ -c $<
+
+clean:
+	make clean -C $(LIBFT)
+	rm -rf $(OBJS)
+	rm -rf $(OBJ_DIR)
+
+fclean: clean
+	make fclean -C $(LIBFT)
+	rm -rf $(NAME)
+	rm -rf a.out
+
+re: fclean all
+
+bonus: $(LIBFT) $(B_OBJS)
+	cp $(LIBFT)/libft.a ./$(NAME)
+	ar -rcs $(NAME) $(B_OBJS)
+
+.PHONY:	all clean fclean re
